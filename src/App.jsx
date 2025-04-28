@@ -10,12 +10,14 @@ function App() {
 
   const allCards = tarotCards
   const [selectedTab, setSelectedTab] = useState('All')
+  const [hideInfo, setHideInfo] = useState(false)
 
   return (
-    <>
-      <Tabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
-      <TarotDeck allCards={allCards} selectedTab={selectedTab}/>
-    </>
+    <div className="container">
+      <h1>Explore the Tarot Deck</h1>
+      <Tabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} hideInfo={hideInfo} setHideInfo={setHideInfo} />
+      <TarotDeck allCards={allCards} selectedTab={selectedTab} hideInfo={hideInfo}/>
+    </div>
   )
 }
 

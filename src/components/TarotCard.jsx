@@ -1,6 +1,6 @@
 export function TarotCard(props) {
     
-    const {card, cardIndex} = props
+    const {card, cardIndex, hideInfo} = props
 
     return (
         <>
@@ -9,9 +9,15 @@ export function TarotCard(props) {
                     <img className='default-img' src={'/tarot-cards/' + card.name.toLowerCase().replace(/\s+/g, '-') + '.png'} alt={`${card.name}-large-img`}/>
                 </div>
                 <div className="card-info">
-                    <h3>{card.name}</h3>
-                    <p>{card.keywords}</p>
+                    <h2>{card.name}</h2>
+                    <p>{card.arcana} &#9900; {card.number} &#9900; {card.suit}</p>
+                    <p className="card-keywords">{card.keywords.map((keyword, keywordIndex) => {
+                        return (
+                            <span key={keywordIndex}>{keyword} &#9900; </span>
+                        )
+                    })}</p>
                     <p>{card.meaning_up}</p>
+                    <p>{card.detailed_description}</p>
                 </div>
                 
             </div>

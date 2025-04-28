@@ -2,13 +2,7 @@ import { TarotCard } from "./TarotCard"
 
 export function TarotDeck(props) {
 
-    const { allCards, selectedTab } = props
-    /*const filteredTodosList = selectedTab === 'All' ? 
-    todos : 
-    selectedTab === 'Completed' ?
-        todos.filter(val => val.complete) :
-        todos.filter(val => !val.complete)*/
-
+    const { allCards, selectedTab, hideInfo } = props
     const filteredCards = 
         selectedTab === 'Major' ? allCards.filter((card) => card.arcana === 'Major' ) :
         selectedTab === 'Minor' ? allCards.filter((card) => card.arcana === 'Minor' ) :
@@ -19,17 +13,18 @@ export function TarotDeck(props) {
         allCards
 
     return (
-        <>
-            <div>This is the tarot Deck</div>
+        <div className={"tarot-deck " + (hideInfo ? ' hide-info' : ' ')}>
+            
             { filteredCards.map((card, cardIndex) => {
                 return (
                     <TarotCard 
                         key={cardIndex}
                         card={card}
                         cardIndex={cardIndex}
+                        hideInfo={hideInfo}
                         />
                 )
             })}
-        </>
+        </div>
     )
 }

@@ -220,7 +220,7 @@ export const tarotCards = [
     "detailed_description": "The Sun brings light, clarity, and a surge of optimism. It's a sign that you are thriving and shining brightly. Success, happiness, and growth are assured. Even setbacks are minor under the Sun's warmth — enjoy this period of vibrant energy and open-hearted living."
   },
   {
-    "name": "Judgment",
+    "name": "Judgement",
     "number": 20,
     "arcana": "Major",
     "suit": null,
