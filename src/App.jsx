@@ -1,15 +1,20 @@
 import { useState } from 'react'
 import { tarotCards } from "./utils"
 import { TarotDeck } from './components/TarotDeck'
+import { Tabs } from './components/Tabs'
 
-const allCards = tarotCards
+
+
 
 function App() {
-  
+
+  const allCards = tarotCards
+  const [selectedTab, setSelectedTab] = useState('All')
 
   return (
     <>
-      <TarotDeck allCards={allCards}/>
+      <Tabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+      <TarotDeck allCards={allCards} selectedTab={selectedTab}/>
     </>
   )
 }

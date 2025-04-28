@@ -5,10 +5,15 @@ export function TarotCard(props) {
     return (
         <>
             <div className="tarot-card">
-                <h3>{card.name}</h3>
-                <img className='default-img' src={'/tarot-cards/' + card.name.toLowerCase().replace(/\s+/g, '-') + '.png'} alt={`${name}-large-img`}/>
-                <p>{card.keywords}</p>
-                <p>{card.meaning_up}</p>
+                <div className="card-image">
+                    <img className='default-img' src={'/tarot-cards/' + card.name.toLowerCase().replace(/\s+/g, '-') + '.png'} alt={`${card.name}-large-img`}/>
+                </div>
+                <div className="card-info">
+                    <h3>{card.name}</h3>
+                    <p>{card.keywords}</p>
+                    <p>{card.meaning_up}</p>
+                </div>
+                
             </div>
             
         </>

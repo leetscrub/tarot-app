@@ -71,4 +71,10 @@ button:focus-visible {
 .tarot-card {
   border: solid 1px salmon;
   margin: 0 0 24px 0;
+  display: flex;
+}
+
+.tarot-card img {
+  max-width: 150px;
+  padding-right: 24px;
 }
